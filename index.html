@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Employee Management System</h1>
+
+
+        <button id="addEmployeeBtn" class="addEmployeeBtn">+ Add Employee</button>
+        <!-- Popup div -->
+        <div class="popup" id="popupForm">
+            <!-- from -->
+            <div id="employeeForm" class="popup-content">
+                <span class="close" id="closeBtn">&times;</span>
+                <h2 class="title-head">Add/Edit Employee</h2>
+                <form onsubmit="saveEmployee()">
+                    <input type="hidden" id="employeeId">
+                    <input type="text" id="name" placeholder="Name" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <select id="gender" required class="dropdown-content">
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <button class="saveEmployeeBtn"  type="submit">Save Employee</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="employeeList">
+            <h2>Employee List</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Gender</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="employeeTableBody">
+                    <!-- Employee data will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
